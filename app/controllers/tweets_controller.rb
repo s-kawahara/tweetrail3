@@ -14,7 +14,7 @@ class TweetsController < ApplicationController
 
   # GET /tweets/new
   def new
-    @tweet = current_user.tweet.new
+    @tweet = Tweet.new
   end
 
   # GET /tweets/1/edit
@@ -26,7 +26,7 @@ class TweetsController < ApplicationController
   def create
     @tweet = Tweet.new(tweet_params)
     @tweet.user_id = current_user.id
-    @tweet.user_name = current_user.name
+    @tweet.user_name = current_user.username
 
     respond_to do |format|
       if @tweet.save
