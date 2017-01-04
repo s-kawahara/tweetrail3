@@ -12,16 +12,19 @@
     <header>
       <nav>
         <!-- user_signed_in? はユーザがログインしているか調べるdeviseのHelperメソッド -->
+        <%= link_to "TweetRail",  root_path %>
         <% if user_signed_in? %>
         <!-- current_user は現在ログインしているUserオブジェクトを返すdeviseのHelperメソッド -->
         <!-- *_path はUserモデルを作成したときに、
         deviseにより自動で作成されてますので、rake routesで確認できます -->
           ログイン中:<strong><%= current_user.username %></strong>
           <%= link_to 'プロフィール変更', edit_user_registration_path %> |
-          <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+          <%= link_to "ログアウト", destroy_user_session_path, method: :delete %> |
+          <%= link_to 'タイムライン', tweets_path %>
           <% else %>
           <%= link_to "ユーザー登録", new_user_registration_path %> |
           <%= link_to "ログイン", new_user_session_path %>
+          <%= link_to 'タイムライン', tweets_path %>
         <% end %>
       </nav>
     </header>

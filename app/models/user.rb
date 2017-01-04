@@ -1,5 +1,6 @@
 class User < ApplicationRecord
-  has_many :notes
+  has_many :tweets, dependent: :destroy
+  has_many :likes
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
