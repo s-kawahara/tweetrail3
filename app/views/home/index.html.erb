@@ -1,2 +1,13 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<% if user_signed_in? %>
+<!-- current_user は現在ログインしているUserオブジェクトを返すdeviseのHelperメソッド -->
+<!-- *_path はUserモデルを作成したときに、
+deviseにより自動で作成されてますので、rake routesで確認できます -->
+  <h1>ようこそ<%= current_user.username %>さん</h1>
+  <%= link_to "タイムライン", tweets_path %> |
+  <%= link_to "ツイート", new_tweet_path %>
+  <% else %>
+  <h1>TweetRailへようこそ</h1>
+
+  <%= link_to "ユーザー登録", new_user_registration_path %> |
+  <%= link_to "ログイン", new_user_session_path %>
+<% end %>
