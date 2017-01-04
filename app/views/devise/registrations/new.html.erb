@@ -6,9 +6,11 @@
   <div><%= f.label :username %><br />
   <%= f.text_field :username, autofocus: true %></div>
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email %></div>
-
+  <% if false %> コメントです。表示されません。
+  <div><%= f.label :email, "Eメール" %><br />
+  <%= f.email_field :email, autofocus: true %></div>
+  <% end %>
+  
   <div><%= f.label :password %><br />
     <%= f.password_field :password, autocomplete: "off" %></div>
 
