@@ -11,6 +11,7 @@ gem 'devise'
 #ExecJS::ProgramError TypeError: オブジェクトでサポートされていないプロパティまたはメソッドです。
 #というエラー文への対応
 gem 'coffee-script-source', '1.8.0'
+#cannot load such file — 1.9/bcrypt_extエラーへの対応
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.1'
 # Use sqlite3 as the database for Active Record
