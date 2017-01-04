@@ -5,5 +5,8 @@ class HomeController < ApplicationController
   end
 
   def show
+
+    @tweets = @user.tweets
+    
   end
 end
