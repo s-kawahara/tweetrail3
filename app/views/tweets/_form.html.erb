@@ -12,12 +12,10 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :content %>
+    <%= f.label :content,"今の気持ちをつぶやきましょう" %>
     <%= f.text_area :content %>
   </div>
 
+<button type="submit" class="btn btn-success">Tweet</button>
 
-  <div class="actions">
-    <%= f.submit "Tweet" %>
-  </div>
 <% end %>

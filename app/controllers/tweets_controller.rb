@@ -4,6 +4,7 @@ class TweetsController < ApplicationController
   # GET /tweets
   # GET /tweets.json
   def index
+    @tweet = Tweet.new
     @tweets = Tweet.all
   end
 
@@ -35,7 +36,7 @@ class TweetsController < ApplicationController
         format.html { redirect_to @tweet, notice: 'Tweet was successfully created.' }
         format.json { render :show, status: :created, location: @tweet }
       else
-        format.html { render :new }
+        format.html { redirect_to @tweet, notice: 'Tweet was not created.' }
         format.json { render json: @tweet.errors, status: :unprocessable_entity }
       end
     end
