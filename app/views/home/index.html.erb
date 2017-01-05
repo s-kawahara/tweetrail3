@@ -2,9 +2,7 @@
 <!-- current_user は現在ログインしているUserオブジェクトを返すdeviseのHelperメソッド -->
 <!-- *_path はUserモデルを作成したときに、
 deviseにより自動で作成されてますので、rake routesで確認できます -->
-  <h1>ようこそ<%= current_user.username %>さん</h1>
-  <%= link_to "タイムライン", tweets_path %> |
-  <%= link_to "ツイート", new_tweet_path %>
+  <%= redirect_to tweets_path %>
   <% else %>
   <h1>TweetRailへようこそ</h1>
 

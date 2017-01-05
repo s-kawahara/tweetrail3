@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= content_for?(:title) ? yield(:title) : "Twitter" %></title>
+    <title><%= content_for?(:title) ? yield(:title) : "TweetRail" %></title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag "application", :media => "all" %>
@@ -48,7 +48,7 @@
         <div class="navbar-collapse collapse navbar-responsive-collapse">
           <div class="row">
           <ul class="nav navbar-nav">
-            <%= link_to "TweetRail",  root_path %>
+            <%= link_to "TweetRail",  root_path,:class => 'btn btn-primary' %>
             <% if user_signed_in? %>
             ログイン中:<strong><%= current_user.username %></strong>
             <%= link_to 'プロフィール変更', edit_user_registration_path %> |
