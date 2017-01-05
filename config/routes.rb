@@ -1,15 +1,10 @@
 Rails.application.routes.draw do
+  root to: "home#index"
   resources :tweets
   devise_for :users, path_names: { sign_in: "login", sign_out: "logout"}
 
-  root to: "home#index"
-  # ログイン画面をホームにする（エラーが発生するのでいったんコメントアウト）
-  #devise_scope :user do
-  #  root :to => "devise/sessions#new"
-  #end
-  get 'home/index'
-
-  get 'home/show'
+  post 'like/:tweet_id' => 'likes#like', as:'like'
+  delete 'unlike/:tweet_id' => 'likes#unlike', as:'unlike'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 

@@ -1,6 +1,11 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <strong>tweet_id:</strong>
+  <%= @tweet.id %>
+</p>
+
+<p>
   <strong>Content:</strong>
   <%= @tweet.content %>
 </p>
@@ -10,5 +15,12 @@
   <%= @tweet.user_id %>
 </p>
 
-<%= link_to 'Edit', edit_tweet_path(@tweet) %> |
+<% if current_user.likes.find_by(tweet_id: @tweet.id) %>
+  <%= link_to'★',unlike_path(@tweet.id),method: :delete %>
+  <% else %>
+  <%= link_to '☆', like_path(@tweet.id),method: :post %>
+<% end %>
+<%= @tweet.likes.count %> </br>
+↑お気に入り登録ボタン</br>
+
 <%= link_to 'Back', tweets_path %>

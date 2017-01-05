@@ -10,6 +10,8 @@ class TweetsController < ApplicationController
   # GET /tweets/1
   # GET /tweets/1.json
   def show
+    @user = current_user
+    @tweets =@user.tweets
   end
 
   # GET /tweets/new
