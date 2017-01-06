@@ -15,6 +15,22 @@ gem 'coffee-script-source', '1.8.0'
 gem 'bcrypt-ruby', '3.1.1.rc1', :require => 'bcrypt'
 #エラーメッセージの日本語化
 gem 'rails-i18n'
+group :development, :test do
+  # デバッグに便利なGem
+  gem 'pry-rails'  # rails console(もしくは、rails c)でirbの代わりにpryを使われる
+  gem 'pry-doc'    # methodを表示
+  gem 'pry-byebug' # デバッグを実施(Ruby 2.0以降で動作する)
+  gem 'pry-stack_explorer' # スタックをたどれる
+
+  # RSpecの基本的なGem
+  gem "rspec-rails"
+  gem "shoulda-matchers", '~> 2.8.0'
+  gem "factory_girl_rails"
+
+  # E2Eテストを実施するために必要
+  gem "capybara"
+end
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.1'
 # Use sqlite3 as the database for Active Record
