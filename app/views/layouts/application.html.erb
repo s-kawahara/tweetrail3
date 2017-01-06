@@ -48,6 +48,7 @@
         <div class="navbar-collapse collapse navbar-responsive-collapse">
           <div class="row">
           <ul class="nav navbar-nav">
+            <%= image_tag 'cubic_logo.png',:size => '50x50' %>
             <%= link_to "TweetRail",  root_path,:class => 'btn btn-primary' %>
             <% if user_signed_in? %>
             ログイン中:<strong><%= current_user.username %></strong>
