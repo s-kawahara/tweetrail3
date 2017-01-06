@@ -49,7 +49,7 @@
           <div class="row">
           <ul class="nav navbar-nav">
             <%= image_tag 'cubic_logo.png',:size => '50x50' %>
-            <%= link_to "TweetRail",  root_path,:class => 'btn btn-primary' %>
+            <%= link_to "TweetRail",  root_path,:class => 'btn btn-primary',:style=>"color:white" %>
             <% if user_signed_in? %>
             ログイン中:<strong><%= current_user.username %></strong>
             <%= link_to 'プロフィール変更', edit_user_registration_path %> |
