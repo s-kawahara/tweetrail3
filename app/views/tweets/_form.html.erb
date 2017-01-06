@@ -12,10 +12,24 @@
   <% end %>
 
   <div class="field">
+    <h2><strong><%= current_user.username %></strong></h2></br>
+    <div class="col-xs-6 col-md-4" style="border: 1px solid #009000">
+      つぶやき</br>
+      <strong><%= current_user.tweets.count %></strong>
+    </div>
+    <div class="col-xs-6 col-md-4" style="border: 1px solid #009000">
+      フォロー</br>
+      <strong><%= "非対応" %></strong></br>
+    </div>
+    <div class="col-xs-6 col-md-4" style="border: 1px solid #009000">
+      フォロワー</br>
+      <strong><%= "非対応" %></strong></br>
+    </div>
+  </br>
     <%= f.label :content,"今の気持ちをつぶやきましょう" %>
-    <%= f.text_area :content %>
+    <%= f.text_area :content, :size => "28x5" %>
   </div>
 
-<button type="submit" class="btn btn-success">Tweet</button>
+<button type="submit" class="btn btn-success">つぶやく</button>
 
 <% end %>
