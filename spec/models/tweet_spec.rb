@@ -12,6 +12,5 @@ RSpec.describe Tweet, type: :model do
 
   describe "#user_id" do
     it { is_expected.to validate_presence_of(:user_id) }
-    it { is_expected.to validate_uniqueness_of(:user_id) }
   end
 end
