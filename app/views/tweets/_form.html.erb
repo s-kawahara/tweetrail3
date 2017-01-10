@@ -22,7 +22,11 @@
     </h2></br>
     <div class="col-xs-6 col-md-4" style="border: 1px solid #009000">
       つぶやき</br>
-      <strong><%= current_user.tweets.count %></strong>
+      <a herf = "<%= user_path(@user) %>">
+        <strong id = "tweet_count" class="stat">
+          <%= @user.tweets.count %>
+        </strong>
+      </a></br>
     </div>
     <div class="col-xs-6 col-md-4" style="border: 1px solid #009000">
       フォロー</br>

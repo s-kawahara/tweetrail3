@@ -17,7 +17,12 @@
   <tbody>
     <% @tweets.each do |tweet| %>
       <tr>
-        <td><%= link_to tweet.user_name, user_path(:id =>tweet.user.id)%></td>
+        <td><% if tweet.user.image %>
+          <%= image_tag "/user_images/{user.image}" %>
+        <% else %>
+          <%= image_tag "egg.png",:size => '25x25' %>
+        <% end %>
+          <%= link_to tweet.user_name, user_path(:id =>tweet.user.id)%></td>
         <td><%= link_to tweet.content, tweet %></td>
         <td>
         <% if current_user.likes.find_by(tweet_id: tweet.id) %>

@@ -8,9 +8,9 @@
 <% unless current_user.id == @user.id %>
   <div id="follow_form">
   <% if current_user.following?(@user) %>
-      <%= link_to "フォロー解除", relationship_path(user_id: @user.id), method: :delete %>
+      <%= link_to "フォロー解除", relationship_path(user_id: @user.id), method: :delete,:class => 'btn btn-danger',:style=>"color:white"  %>
     <% else %>
-      <%= link_to "フォローする", relationships_path(user_id: @user.id), method: :post %>
+      <%= link_to "フォローする", relationships_path(user_id: @user.id), method: :post, :class => 'btn btn-primary',:style=>"color:white" %>
     <% end %>
   </div>
 <% end %>

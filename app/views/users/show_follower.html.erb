@@ -2,20 +2,17 @@
 <div class="row">
   <aside class="span4">
     <section>
-      <h1><%= @user.username %></h1>
-      <span><b>Tweets:</b> <%= @user.tweets.count %></span>
-    </section>
-    <section>
-      <%= render 'users/stats' %>
+      <h1><%= @user.username %>のフォロワー</h1>
+      <h5>フォロワー数 : <%= @user.followers.count %></h5>
     </section>
   </aside>
   <div class="span8">
-    <h3><%= @title %></h3>
     <% if @users.any? %>
       <ul class="users">
         <% @followers.each do |follower| %>
         <tr>
-          <li><%= @users.find_by(id: follower.following_id).username %></li>
+          <li><%= link_to @users.find_by(id: follower.following_id).username,
+          user_path(:id => @users.find_by(id: follower.following_id).id) %></li>
         </tr>
       <% end %>
       </ul>
