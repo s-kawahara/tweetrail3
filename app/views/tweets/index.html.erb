@@ -18,8 +18,8 @@
   <tbody>
     <% @tweets.each do |tweet| %>
       <tr>
-        <td><%= tweet.user_name %></td>
-        <td><%= tweet.content %></td>
+        <td><%= link_to tweet.user_name, user_path(:id =>tweet.user.id)%></td>
+        <td><%= link_to tweet.content, tweet %></td>
         <td>
         <% if current_user.likes.find_by(tweet_id: tweet.id) %>
           <%= link_to'★',unlike_path(tweet.id),method: :delete %>

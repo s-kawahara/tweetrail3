@@ -1,2 +1,32 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<% provide(:title, @user.username) %>
+<h1><%= @user.username %>のマイページ</h1>
+
+<h3> ツイート一覧 </h3>
+<ul class="tweets">
+  <!-- ここで@notesに対してeachメソッドを用いてください -->
+  <% @tweets.each do |tweet| %>
+  <li><%= link_to tweet.content, tweet %></li>
+  <% end %>
+</ul>
+
+
+<% @user ||= current_user %>
+<div class = "stats">
+  <a href = "<%= following_user_path(@user) %>">
+    <strong id = "following" class="stat">
+
+      未実装
+    </strong>
+    following
+  </a>
+  <a href = "<%= followers_user_path(@user) %>">
+    <strong id ="followers" class="stat">
+
+      未実装
+    </strong>
+    followers
+  </a>
+</div>
+
+
+<%= render 'follow_form' if user_signed_in? %>
