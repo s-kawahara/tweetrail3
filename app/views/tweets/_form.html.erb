@@ -12,7 +12,14 @@
   <% end %>
 
   <div class="field">
-    <h2><strong><%= current_user.username %></strong></h2></br>
+    <h2>
+      <% if current_user.image %>
+        <%= image_tag "/user_images/{user.image}" %>
+      <% else %>
+        <%= image_tag "egg.png",:size => '50x50' %>
+      <% end %>
+      <strong><%= current_user.username %></strong>
+    </h2></br>
     <div class="col-xs-6 col-md-4" style="border: 1px solid #009000">
       つぶやき</br>
       <strong><%= current_user.tweets.count %></strong>

@@ -6,6 +6,11 @@
   <div><%= f.label :username, "名前"%><br />
   <%= f.text_field :username, autofocus: true %></div>
 
+  <div class = "field">
+    <%= f.label :image,"アイコン(任意)" %><br/>
+    <%= f.file_field :image %>
+  </div>
+
   <% if false %> コメントです。表示されません。
   <div><%= f.label :email, "Eメール" %><br />
   <%= f.email_field :email, autofocus: true %></div>
