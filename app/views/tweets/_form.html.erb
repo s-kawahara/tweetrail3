@@ -26,11 +26,19 @@
     </div>
     <div class="col-xs-6 col-md-4" style="border: 1px solid #009000">
       フォロー</br>
-      <strong><%= "非対応" %></strong></br>
+      <a href = "<%= following_user_path(@user) %>">
+        <strong id = "following" class="stat">
+          <%= @user.followings.count %>
+        </strong>
+      </a></br>
     </div>
     <div class="col-xs-6 col-md-4" style="border: 1px solid #009000">
       フォロワー</br>
-      <strong><%= "非対応" %></strong></br>
+      <a href = "<%= followers_user_path(@user) %>">
+        <strong id ="followers" class="stat">
+          <%= @user.followers.count %>
+        </strong>
+      </a></br>
     </div>
   </br>
     <%= f.label :content,"今の気持ちをつぶやきましょう" %>

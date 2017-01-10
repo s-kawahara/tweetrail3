@@ -11,7 +11,6 @@ class RelationshipsController < ApplicationController
   def destroy
     user_id = params[:user_id]
     if Relationship.find_by(following_id: current_user.id, follower_id: user_id).destroy
-      redirect_to user_path(user_id), notice: "フォロー解除しました"
-    end
+	  end
   end
 end

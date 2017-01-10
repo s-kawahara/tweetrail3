@@ -1,19 +1,15 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>tweet_id:</strong>
-  <%= @tweet.id %>
+  <strong>User:</strong>
+  <%= link_to @tweet.user_name, user_path(:id =>@tweet.user.id) %>
 </p>
 
 <p>
-  <strong>Content:</strong>
+  <strong>Tweet:</strong>
   <%= @tweet.content %>
 </p>
 
-<p>
-  <strong>User:</strong>
-  <%= @tweet.user_id %>
-</p>
 
 <% if current_user.likes.find_by(tweet_id: @tweet.id) %>
   <%= link_to'★',unlike_path(@tweet.id),method: :delete %>
